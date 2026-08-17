@@ -4,10 +4,7 @@ import br.com.dio.taskmanager.domain.Task;
 import br.com.dio.taskmanager.domain.TaskId;
 import br.com.dio.taskmanager.domain.TaskRepository;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class InMemoryTaskRepository implements TaskRepository {
     private final Map<TaskId, Task> storage = new HashMap<>();
@@ -20,16 +17,16 @@ public class InMemoryTaskRepository implements TaskRepository {
 
     @Override
     public List<Task> findAll() {
-        return List.of();
+        return new ArrayList<>(storage.values());
     }
 
     @Override
     public Optional<Task> findById(TaskId id) {
-        return Optional.empty();
+        return Optional.ofNullable(storage.get(id));
     }
 
     @Override
     public void delete(TaskId id) {
-
+        storage.remove(id);
     }
 }
