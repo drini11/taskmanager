@@ -1,9 +1,11 @@
 package br.com.dio.taskmanager.domain;
 
+import lombok.Getter;
 import org.springframework.util.Assert;
 
 import java.util.Optional;
 
+@Getter
 public class Task {
     private TaskId id;
     private String title;
@@ -19,5 +21,6 @@ public class Task {
         this.description = description;
         this.status = TaskStatus.PENDING;
     }
+
 
 }
