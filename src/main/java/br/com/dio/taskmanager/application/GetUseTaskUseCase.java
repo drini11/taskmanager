@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class GetUseTaskCase {
+public class GetUseTaskUseCase {
     private final TaskRepository repository;
 
 
-    public GetUseTaskCase(TaskRepository repository) {
+    public GetUseTaskUseCase(TaskRepository repository) {
         this.repository = repository;
     }
 
